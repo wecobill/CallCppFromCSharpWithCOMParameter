@@ -1,0 +1,59 @@
+// Core.idl : IDL source for Core
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (Core.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(c636d6f8-581e-4b4e-bf29-db710673ba6f),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IDoWork : IDispatch
+{
+    HRESULT Initialize();
+    HRESULT Test();
+    HRESULT SendEvent([in] IDispatch *pIEvent);
+};
+[
+	object,
+	uuid(26966f2b-a975-4a4b-9855-7e93dfb6815c),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IEventData : IDispatch
+{
+    [propget, helpstring("property Key")] HRESULT Key([out, retval]long *pVal);
+    [propput, helpstring("property Key")] HRESULT Key([in] long val);
+};
+[
+	uuid(a4c7b952-c8ed-4f7e-90c1-28de5cb5e843),
+	version(1.0),
+]
+library CoreLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(d4c945f1-3aa2-4acb-9ee7-a92c3be889af)
+	]
+	coclass DoWork
+	{
+		[default] interface IDoWork;
+	};
+	[
+		uuid(28e09e60-4236-459f-bb6a-84d5b1dd996b)
+	]
+	coclass EventData
+	{
+		[default] interface IEventData;
+	};
+};
+
+
+import "shobjidl.idl";
