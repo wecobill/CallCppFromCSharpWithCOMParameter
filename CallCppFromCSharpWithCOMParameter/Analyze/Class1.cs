@@ -1,29 +1,20 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Reflection;
-using CoreLib;
+using System.Runtime.InteropServices;
+using COMLib;
 
 namespace Analyze
 {
-    using System.Runtime.InteropServices;
-
-    [ComVisible(true)]
-    [Guid("94183CED-A9FC-4E26-8358-45408FBF2115")]
-    public interface IProcessingPlugins
-    {
-        void Initialize(DoWork piDoWork);
-        void ProcessFlaw();
-    }
-
     [ComVisible(true)]
     public class Class1 : IProcessingPlugins
     {
-        public void Initialize(DoWork piDoWork)
+        void IProcessingPlugins.Initialize(object piDoWork)
         {
-            _piDoWork = piDoWork;
+            _piDoWork = piDoWork as DoWork;
         }
 
-        public void ProcessFlaw()
+        void IProcessingPlugins.ProcessFlaw()
         {
             try
             {

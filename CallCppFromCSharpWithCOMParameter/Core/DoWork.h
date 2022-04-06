@@ -6,7 +6,6 @@
 
 #include "Core_i.h"
 
-
 #import "..\bin\Debug\Analyze.tlb"
 
 
@@ -57,7 +56,7 @@ public:
 
 private:
     void ProcessFlawDataThread();
-    Analyze::IProcessingPluginsPtr _piAnalyze;
+    IProcessingPlugins *_piAnalyze = nullptr;
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(DoWork), CDoWork)

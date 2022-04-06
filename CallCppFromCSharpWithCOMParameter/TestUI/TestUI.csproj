@@ -80,8 +80,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <COMReference Include="CoreLib">
-      <Guid>{A4C7B952-C8ED-4F7E-90C1-28DE5CB5E843}</Guid>
+    <COMReference Include="COMLib">
+      <Guid>{84E7E34C-32CB-4363-825B-5D05631636F9}</Guid>
       <VersionMajor>1</VersionMajor>
       <VersionMinor>0</VersionMinor>
       <Lcid>0</Lcid>

@@ -6,7 +6,7 @@
  /* File created by MIDL compiler version 8.01.0622 */
 /* at Mon Jan 18 19:14:07 2038
  */
-/* Compiler settings for Core.idl:
+/* Compiler settings for COM.idl:
     Oicf, W1, Zp8, env=Win64 (32b run), target_arch=AMD64 8.01.0622 
     protocol : all , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
@@ -35,8 +35,8 @@
 #include "ole2.h"
 #endif /*COM_NO_WINDOWS_H*/
 
-#ifndef __Core_i_h__
-#define __Core_i_h__
+#ifndef __COM_i_h__
+#define __COM_i_h__
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1020)
 #pragma once
@@ -104,7 +104,6 @@ typedef struct ProcessingPlugins ProcessingPlugins;
 /* header files for imported files */
 #include "oaidl.h"
 #include "ocidl.h"
-#include "shobjidl.h"
 
 #ifdef __cplusplus
 extern "C"{
@@ -536,14 +535,14 @@ EXTERN_C const IID IID_IProcessingPlugins;
 
 
 
-#ifndef __CoreLib_LIBRARY_DEFINED__
-#define __CoreLib_LIBRARY_DEFINED__
+#ifndef __COMLib_LIBRARY_DEFINED__
+#define __COMLib_LIBRARY_DEFINED__
 
-/* library CoreLib */
+/* library COMLib */
 /* [version][uuid] */ 
 
 
-EXTERN_C const IID LIBID_CoreLib;
+EXTERN_C const IID LIBID_COMLib;
 
 EXTERN_C const CLSID CLSID_DoWork;
 
@@ -568,7 +567,7 @@ EXTERN_C const CLSID CLSID_ProcessingPlugins;
 class DECLSPEC_UUID("3A7F93DF-2A3B-496A-B148-A1838578A961")
 ProcessingPlugins;
 #endif
-#endif /* __CoreLib_LIBRARY_DEFINED__ */
+#endif /* __COMLib_LIBRARY_DEFINED__ */
 
 /* Additional Prototypes for ALL interfaces */
 

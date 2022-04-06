@@ -1,8 +1,8 @@
-// Core.idl : IDL source for Core
+// COM.idl : IDL source for COM
 //
 
 // This file will be processed by the MIDL tool to
-// produce the type library (Core.tlb) and marshalling code.
+// produce the type library (COM.tlb) and marshalling code.
 
 import "oaidl.idl";
 import "ocidl.idl";
@@ -45,12 +45,12 @@ interface IProcessingPlugins : IDispatch
     HRESULT ProcessFlaw();
 };
 [
-    uuid(a4c7b952-c8ed-4f7e-90c1-28de5cb5e843),
-    version(1.0),
+	uuid(84e7e34c-32cb-4363-825b-5d05631636f9),
+	version(1.0),
 ]
-library CoreLib
+library COMLib
 {
-    importlib("stdole2.tlb");
+	importlib("stdole2.tlb");
     [
         uuid(d4c945f1-3aa2-4acb-9ee7-a92c3be889af)
     ]
@@ -74,5 +74,3 @@ library CoreLib
     };
 };
 
-
-import "shobjidl.idl";

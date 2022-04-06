@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{33B01895-38A6-4E85-8677-C212C8436B2B}</ProjectGuid>
+    <ProjectGuid>{03B12D66-A2FE-4884-A108-871137472756}</ProjectGuid>
     <Keyword>AtlProj</Keyword>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -67,14 +67,13 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IgnoreImportLibrary>true</IgnoreImportLibrary>
-    <LinkIncremental>true</LinkIncremental>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IgnoreImportLibrary>true</IgnoreImportLibrary>
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\bin\Debug\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+    <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IgnoreImportLibrary>true</IgnoreImportLibrary>
@@ -83,8 +82,40 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IgnoreImportLibrary>true</IgnoreImportLibrary>
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\bin\Debug\</OutDir>
   </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;_DEBUG;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\Core</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <HeaderFileName>COM_i.h</HeaderFileName>
+      <InterfaceIdentifierFileName>COM_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>COM_p.c</ProxyFileName>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(IntDir)COM.tlb</TypeLibraryName>
+      <DllDataFileName />
+      <ValidateAllParameters>true</ValidateAllParameters>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <ModuleDefinitionFile>.\COM.def</ModuleDefinitionFile>
+      <RegisterOutput>true</RegisterOutput>
+      <OutputFile>..\bin\Debug\$(TargetName)$(TargetExt)</OutputFile>
+    </Link>
+  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
@@ -98,11 +129,11 @@
       <MkTypLibCompatible>false</MkTypLibCompatible>
       <TargetEnvironment>Win32</TargetEnvironment>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <HeaderFileName>Core_i.h</HeaderFileName>
-      <InterfaceIdentifierFileName>Core_i.c</InterfaceIdentifierFileName>
-      <ProxyFileName>Core_p.c</ProxyFileName>
+      <HeaderFileName>COM_i.h</HeaderFileName>
+      <InterfaceIdentifierFileName>COM_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>COM_p.c</ProxyFileName>
       <GenerateStublessProxies>true</GenerateStublessProxies>
-      <TypeLibraryName>$(IntDir)Core.tlb</TypeLibraryName>
+      <TypeLibraryName>$(IntDir)COM.tlb</TypeLibraryName>
       <DllDataFileName />
       <ValidateAllParameters>true</ValidateAllParameters>
     </Midl>
@@ -113,42 +144,8 @@
     </ResourceCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <ModuleDefinitionFile>.\Core.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>.\COM.def</ModuleDefinitionFile>
       <RegisterOutput>true</RegisterOutput>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_WINDOWS;_DEBUG;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>
-      </AdditionalIncludeDirectories>
-    </ClCompile>
-    <Midl>
-      <MkTypLibCompatible>false</MkTypLibCompatible>
-      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <HeaderFileName>Core_i.h</HeaderFileName>
-      <InterfaceIdentifierFileName>Core_i.c</InterfaceIdentifierFileName>
-      <ProxyFileName>Core_p.c</ProxyFileName>
-      <GenerateStublessProxies>true</GenerateStublessProxies>
-      <TypeLibraryName>$(IntDir)Core.tlb</TypeLibraryName>
-      <DllDataFileName />
-      <ValidateAllParameters>true</ValidateAllParameters>
-    </Midl>
-    <ResourceCompile>
-      <Culture>0x0409</Culture>
-      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-    </ResourceCompile>
-    <Link>
-      <SubSystem>Windows</SubSystem>
-      <ModuleDefinitionFile>.\Core.def</ModuleDefinitionFile>
-      <RegisterOutput>true</RegisterOutput>
-      <OutputFile>..\bin\Debug\$(TargetName)$(TargetExt)</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -164,11 +161,11 @@
       <MkTypLibCompatible>false</MkTypLibCompatible>
       <TargetEnvironment>Win32</TargetEnvironment>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <HeaderFileName>Core_i.h</HeaderFileName>
-      <InterfaceIdentifierFileName>Core_i.c</InterfaceIdentifierFileName>
-      <ProxyFileName>Core_p.c</ProxyFileName>
+      <HeaderFileName>COM_i.h</HeaderFileName>
+      <InterfaceIdentifierFileName>COM_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>COM_p.c</ProxyFileName>
       <GenerateStublessProxies>true</GenerateStublessProxies>
-      <TypeLibraryName>$(IntDir)Core.tlb</TypeLibraryName>
+      <TypeLibraryName>$(IntDir)COM.tlb</TypeLibraryName>
       <DllDataFileName />
       <ValidateAllParameters>true</ValidateAllParameters>
     </Midl>
@@ -179,7 +176,7 @@
     </ResourceCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <ModuleDefinitionFile>.\Core.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>.\COM.def</ModuleDefinitionFile>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <RegisterOutput>true</RegisterOutput>
@@ -193,17 +190,16 @@
       <PreprocessorDefinitions>_WINDOWS;NDEBUG;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>
-      </AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Core</AdditionalIncludeDirectories>
     </ClCompile>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <HeaderFileName>Core_i.h</HeaderFileName>
-      <InterfaceIdentifierFileName>Core_i.c</InterfaceIdentifierFileName>
-      <ProxyFileName>Core_p.c</ProxyFileName>
+      <HeaderFileName>COM_i.h</HeaderFileName>
+      <InterfaceIdentifierFileName>COM_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>COM_p.c</ProxyFileName>
       <GenerateStublessProxies>true</GenerateStublessProxies>
-      <TypeLibraryName>$(IntDir)Core.tlb</TypeLibraryName>
+      <TypeLibraryName>$(IntDir)COM.tlb</TypeLibraryName>
       <DllDataFileName />
       <ValidateAllParameters>true</ValidateAllParameters>
     </Midl>
@@ -214,7 +210,7 @@
     </ResourceCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <ModuleDefinitionFile>.\Core.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>.\COM.def</ModuleDefinitionFile>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <RegisterOutput>true</RegisterOutput>
@@ -222,10 +218,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Core_i.h" />
+    <ClInclude Include="COM_i.h" />
     <ClInclude Include="dllmain.h" />
-    <ClInclude Include="DoWork.h" />
-    <ClInclude Include="EventData.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
@@ -233,8 +227,8 @@
     <ClInclude Include="xdlldata.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Core.cpp" />
-    <ClCompile Include="Core_i.c">
+    <ClCompile Include="COM.cpp" />
+    <ClCompile Include="COM_i.c">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsManaged>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
@@ -262,11 +256,9 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="DoWork.cpp" />
-    <ClCompile Include="EventData.cpp" />
     <ClCompile Include="pch.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
@@ -282,16 +274,14 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Core.rc" />
+    <ResourceCompile Include="COM.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Core.def" />
-    <None Include="Core.rgs" />
-    <None Include="DoWork.rgs" />
-    <None Include="EventData.rgs" />
+    <None Include="COM.def" />
+    <None Include="COM.rgs" />
   </ItemGroup>
   <ItemGroup>
-    <Midl Include="Core.idl" />
+    <Midl Include="COM.idl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

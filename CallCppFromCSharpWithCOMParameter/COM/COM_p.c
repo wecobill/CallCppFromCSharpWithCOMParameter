@@ -6,7 +6,7 @@
  /* File created by MIDL compiler version 8.01.0622 */
 /* at Mon Jan 18 19:14:07 2038
  */
-/* Compiler settings for Core.idl:
+/* Compiler settings for COM.idl:
     Oicf, W1, Zp8, env=Win64 (32b run), target_arch=AMD64 8.01.0622 
     protocol : all , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
@@ -44,7 +44,7 @@
 #endif /* __RPCPROXY_H_VERSION__ */
 
 
-#include "Core_i.h"
+#include "COM_i.h"
 
 #define TYPE_FORMAT_STRING_SIZE   25                                
 #define PROC_FORMAT_STRING_SIZE   217                               
@@ -52,23 +52,23 @@
 #define TRANSMIT_AS_TABLE_SIZE    0            
 #define WIRE_MARSHAL_TABLE_SIZE   0            
 
-typedef struct _Core_MIDL_TYPE_FORMAT_STRING
+typedef struct _COM_MIDL_TYPE_FORMAT_STRING
     {
     short          Pad;
     unsigned char  Format[ TYPE_FORMAT_STRING_SIZE ];
-    } Core_MIDL_TYPE_FORMAT_STRING;
+    } COM_MIDL_TYPE_FORMAT_STRING;
 
-typedef struct _Core_MIDL_PROC_FORMAT_STRING
+typedef struct _COM_MIDL_PROC_FORMAT_STRING
     {
     short          Pad;
     unsigned char  Format[ PROC_FORMAT_STRING_SIZE ];
-    } Core_MIDL_PROC_FORMAT_STRING;
+    } COM_MIDL_PROC_FORMAT_STRING;
 
-typedef struct _Core_MIDL_EXPR_FORMAT_STRING
+typedef struct _COM_MIDL_EXPR_FORMAT_STRING
     {
     long          Pad;
     unsigned char  Format[ EXPR_FORMAT_STRING_SIZE ];
-    } Core_MIDL_EXPR_FORMAT_STRING;
+    } COM_MIDL_EXPR_FORMAT_STRING;
 
 
 static const RPC_SYNTAX_IDENTIFIER  _RpcTransferSyntax = 
@@ -79,9 +79,9 @@ static const RPC_SYNTAX_IDENTIFIER  _NDR64_RpcTransferSyntax =
 
 
 
-extern const Core_MIDL_TYPE_FORMAT_STRING Core__MIDL_TypeFormatString;
-extern const Core_MIDL_PROC_FORMAT_STRING Core__MIDL_ProcFormatString;
-extern const Core_MIDL_EXPR_FORMAT_STRING Core__MIDL_ExprFormatString;
+extern const COM_MIDL_TYPE_FORMAT_STRING COM__MIDL_TypeFormatString;
+extern const COM_MIDL_PROC_FORMAT_STRING COM__MIDL_ProcFormatString;
+extern const COM_MIDL_EXPR_FORMAT_STRING COM__MIDL_ExprFormatString;
 
 
 extern const MIDL_STUB_DESC Object_StubDesc;
@@ -110,7 +110,7 @@ extern const MIDL_STUBLESS_PROXY_INFO IProcessingPlugins_ProxyInfo;
 #error  Invalid build platform for this stub.
 #endif
 
-static const Core_MIDL_PROC_FORMAT_STRING Core__MIDL_ProcFormatString =
+static const COM_MIDL_PROC_FORMAT_STRING COM__MIDL_ProcFormatString =
     {
         0,
         {
@@ -301,7 +301,7 @@ static const Core_MIDL_PROC_FORMAT_STRING Core__MIDL_ProcFormatString =
         }
     };
 
-static const Core_MIDL_TYPE_FORMAT_STRING Core__MIDL_TypeFormatString =
+static const COM_MIDL_TYPE_FORMAT_STRING COM__MIDL_TypeFormatString =
     {
         0,
         {
@@ -397,7 +397,7 @@ static const unsigned short IProcessingPlugins_FormatStringOffsetTable[] =
  /* File created by MIDL compiler version 8.01.0622 */
 /* at Mon Jan 18 19:14:07 2038
  */
-/* Compiler settings for Core.idl:
+/* Compiler settings for COM.idl:
     Oicf, W1, Zp8, env=Win64 (32b run), target_arch=AMD64 8.01.0622 
     protocol : all , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
@@ -789,9 +789,9 @@ static const MIDL_SYNTAX_INFO IDoWork_SyntaxInfo [  2 ] =
     {
     {{0x8A885D04,0x1CEB,0x11C9,{0x9F,0xE8,0x08,0x00,0x2B,0x10,0x48,0x60}},{2,0}},
     0,
-    Core__MIDL_ProcFormatString.Format,
+    COM__MIDL_ProcFormatString.Format,
     &IDoWork_FormatStringOffsetTable[-3],
-    Core__MIDL_TypeFormatString.Format,
+    COM__MIDL_TypeFormatString.Format,
     0,
     0,
     0
@@ -811,7 +811,7 @@ static const MIDL_SYNTAX_INFO IDoWork_SyntaxInfo [  2 ] =
 static const MIDL_STUBLESS_PROXY_INFO IDoWork_ProxyInfo =
     {
     &Object_StubDesc,
-    Core__MIDL_ProcFormatString.Format,
+    COM__MIDL_ProcFormatString.Format,
     &IDoWork_FormatStringOffsetTable[-3],
     (RPC_SYNTAX_IDENTIFIER*)&_RpcTransferSyntax,
     2,
@@ -824,7 +824,7 @@ static const MIDL_SERVER_INFO IDoWork_ServerInfo =
     {
     &Object_StubDesc,
     0,
-    Core__MIDL_ProcFormatString.Format,
+    COM__MIDL_ProcFormatString.Format,
     (unsigned short *) &IDoWork_FormatStringOffsetTable[-3],
     0,
     (RPC_SYNTAX_IDENTIFIER*)&_NDR64_RpcTransferSyntax,
@@ -889,9 +889,9 @@ static const MIDL_SYNTAX_INFO IEventData_SyntaxInfo [  2 ] =
     {
     {{0x8A885D04,0x1CEB,0x11C9,{0x9F,0xE8,0x08,0x00,0x2B,0x10,0x48,0x60}},{2,0}},
     0,
-    Core__MIDL_ProcFormatString.Format,
+    COM__MIDL_ProcFormatString.Format,
     &IEventData_FormatStringOffsetTable[-3],
-    Core__MIDL_TypeFormatString.Format,
+    COM__MIDL_TypeFormatString.Format,
     0,
     0,
     0
@@ -911,7 +911,7 @@ static const MIDL_SYNTAX_INFO IEventData_SyntaxInfo [  2 ] =
 static const MIDL_STUBLESS_PROXY_INFO IEventData_ProxyInfo =
     {
     &Object_StubDesc,
-    Core__MIDL_ProcFormatString.Format,
+    COM__MIDL_ProcFormatString.Format,
     &IEventData_FormatStringOffsetTable[-3],
     (RPC_SYNTAX_IDENTIFIER*)&_RpcTransferSyntax,
     2,
@@ -924,7 +924,7 @@ static const MIDL_SERVER_INFO IEventData_ServerInfo =
     {
     &Object_StubDesc,
     0,
-    Core__MIDL_ProcFormatString.Format,
+    COM__MIDL_ProcFormatString.Format,
     (unsigned short *) &IEventData_FormatStringOffsetTable[-3],
     0,
     (RPC_SYNTAX_IDENTIFIER*)&_NDR64_RpcTransferSyntax,
@@ -987,9 +987,9 @@ static const MIDL_SYNTAX_INFO IProcessingPlugins_SyntaxInfo [  2 ] =
     {
     {{0x8A885D04,0x1CEB,0x11C9,{0x9F,0xE8,0x08,0x00,0x2B,0x10,0x48,0x60}},{2,0}},
     0,
-    Core__MIDL_ProcFormatString.Format,
+    COM__MIDL_ProcFormatString.Format,
     &IProcessingPlugins_FormatStringOffsetTable[-3],
-    Core__MIDL_TypeFormatString.Format,
+    COM__MIDL_TypeFormatString.Format,
     0,
     0,
     0
@@ -1009,7 +1009,7 @@ static const MIDL_SYNTAX_INFO IProcessingPlugins_SyntaxInfo [  2 ] =
 static const MIDL_STUBLESS_PROXY_INFO IProcessingPlugins_ProxyInfo =
     {
     &Object_StubDesc,
-    Core__MIDL_ProcFormatString.Format,
+    COM__MIDL_ProcFormatString.Format,
     &IProcessingPlugins_FormatStringOffsetTable[-3],
     (RPC_SYNTAX_IDENTIFIER*)&_RpcTransferSyntax,
     2,
@@ -1022,7 +1022,7 @@ static const MIDL_SERVER_INFO IProcessingPlugins_ServerInfo =
     {
     &Object_StubDesc,
     0,
-    Core__MIDL_ProcFormatString.Format,
+    COM__MIDL_ProcFormatString.Format,
     (unsigned short *) &IProcessingPlugins_FormatStringOffsetTable[-3],
     0,
     (RPC_SYNTAX_IDENTIFIER*)&_NDR64_RpcTransferSyntax,
@@ -1074,7 +1074,7 @@ static const MIDL_STUB_DESC Object_StubDesc =
     0,
     0,
     0,
-    Core__MIDL_TypeFormatString.Format,
+    COM__MIDL_TypeFormatString.Format,
     1, /* -error bounds_check flag */
     0x60001, /* Ndr library version */
     0,
@@ -1088,7 +1088,7 @@ static const MIDL_STUB_DESC Object_StubDesc =
     0
     };
 
-const CInterfaceProxyVtbl * const _Core_ProxyVtblList[] = 
+const CInterfaceProxyVtbl * const _COM_ProxyVtblList[] = 
 {
     ( CInterfaceProxyVtbl *) &_IEventDataProxyVtbl,
     ( CInterfaceProxyVtbl *) &_IProcessingPluginsProxyVtbl,
@@ -1096,7 +1096,7 @@ const CInterfaceProxyVtbl * const _Core_ProxyVtblList[] =
     0
 };
 
-const CInterfaceStubVtbl * const _Core_StubVtblList[] = 
+const CInterfaceStubVtbl * const _COM_StubVtblList[] = 
 {
     ( CInterfaceStubVtbl *) &_IEventDataStubVtbl,
     ( CInterfaceStubVtbl *) &_IProcessingPluginsStubVtbl,
@@ -1104,7 +1104,7 @@ const CInterfaceStubVtbl * const _Core_StubVtblList[] =
     0
 };
 
-PCInterfaceName const _Core_InterfaceNamesList[] = 
+PCInterfaceName const _COM_InterfaceNamesList[] = 
 {
     "IEventData",
     "IProcessingPlugins",
@@ -1112,7 +1112,7 @@ PCInterfaceName const _Core_InterfaceNamesList[] =
     0
 };
 
-const IID *  const _Core_BaseIIDList[] = 
+const IID *  const _COM_BaseIIDList[] = 
 {
     &IID_IDispatch,
     &IID_IDispatch,
@@ -1121,25 +1121,25 @@ const IID *  const _Core_BaseIIDList[] =
 };
 
 
-#define _Core_CHECK_IID(n)	IID_GENERIC_CHECK_IID( _Core, pIID, n)
+#define _COM_CHECK_IID(n)	IID_GENERIC_CHECK_IID( _COM, pIID, n)
 
-int __stdcall _Core_IID_Lookup( const IID * pIID, int * pIndex )
+int __stdcall _COM_IID_Lookup( const IID * pIID, int * pIndex )
 {
     IID_BS_LOOKUP_SETUP
 
-    IID_BS_LOOKUP_INITIAL_TEST( _Core, 3, 2 )
-    IID_BS_LOOKUP_NEXT_TEST( _Core, 1 )
-    IID_BS_LOOKUP_RETURN_RESULT( _Core, 3, *pIndex )
+    IID_BS_LOOKUP_INITIAL_TEST( _COM, 3, 2 )
+    IID_BS_LOOKUP_NEXT_TEST( _COM, 1 )
+    IID_BS_LOOKUP_RETURN_RESULT( _COM, 3, *pIndex )
     
 }
 
-const ExtendedProxyFileInfo Core_ProxyFileInfo = 
+const ExtendedProxyFileInfo COM_ProxyFileInfo = 
 {
-    (PCInterfaceProxyVtblList *) & _Core_ProxyVtblList,
-    (PCInterfaceStubVtblList *) & _Core_StubVtblList,
-    (const PCInterfaceName * ) & _Core_InterfaceNamesList,
-    (const IID ** ) & _Core_BaseIIDList,
-    & _Core_IID_Lookup, 
+    (PCInterfaceProxyVtblList *) & _COM_ProxyVtblList,
+    (PCInterfaceStubVtblList *) & _COM_StubVtblList,
+    (const PCInterfaceName * ) & _COM_InterfaceNamesList,
+    (const IID ** ) & _COM_BaseIIDList,
+    & _COM_IID_Lookup, 
     3,
     2,
     0, /* table of [async_uuid] interfaces */
